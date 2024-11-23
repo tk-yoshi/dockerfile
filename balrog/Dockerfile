@@ -1,4 +1,4 @@
-FROM python:2.7.18-slim-buster as builder
+FROM python:2.7.18-slim-buster AS builder
 
 SHELL ["/bin/bash", "-c"]
 
@@ -127,7 +127,7 @@ RUN pushd /opt\
     && ./balrog.py --fulltraceback
 
 
-FROM python:2.7.18-slim-buster as base
+FROM python:2.7.18-slim-buster AS base
 
 COPY sources.list /etc/apt/sources.list
 

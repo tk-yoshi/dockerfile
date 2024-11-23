@@ -1,4 +1,4 @@
-FROM python:3.12-slim-bookworm AS builder
+FROM python:3.12.7-slim-bookworm AS builder
 
 SHELL ["/bin/bash", "-c"]
 
@@ -15,7 +15,7 @@ RUN pip install numpy==1.26.4\
     && pushd cigale-v2022.1\
     && pip install .
 
-FROM python:3.12-slim-bookworm AS base
+FROM python:3.12.7-slim-bookworm AS base
 
 COPY --from=builder /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
 COPY --from=builder /usr/local/bin /usr/local/bin
